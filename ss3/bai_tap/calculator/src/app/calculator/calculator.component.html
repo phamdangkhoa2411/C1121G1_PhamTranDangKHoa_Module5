@@ -1,0 +1,15 @@
+<span>Num1: </span><input type="text" [(ngModel)]="num1"><br>
+<select id="" [(ngModel)]="choose">
+  <option value="+">+</option>
+  <option value="-">-</option>
+  <option value="*">X</option>
+  <option value="/">/</option>
+</select>
+<br>
+
+<span>Num2: </span><input type="text" [(ngModel)]="num2"><br>
+<button (click)="calculate()">Calculate</button>
+
+<p>{{result}}</p>
+
+<!--[(ngModel)] dùng để biding 2 chiều -->

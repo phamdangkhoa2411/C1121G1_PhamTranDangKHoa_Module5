@@ -1,0 +1,10 @@
+<h2>Color editor</h2>
+
+<div>
+  <label>Enter Color :</label>
+  <input (change)="changeColor()" type="range" min="1" max="6" value="1" [(ngModel)]="choose">
+</div>
+
+<p style="font-size:40px" [style.color]="color" >
+  This is a color
+</p>
