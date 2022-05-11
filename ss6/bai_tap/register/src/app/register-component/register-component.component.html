@@ -1,0 +1,79 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <p>
+    <label for="email">  email</label>
+    <input type="text" id="email" name="email" formControlName="email">
+  </p>
+    <div *ngIf="registerForm.get('email').errors?.required&& (email?.dirty ||email?.touched)" style="color: red">
+     Không được bỏ trống
+    </div>
+      <div *ngIf="registerForm.get('email').errors?.email&& (email?.dirty ||email?.touched)" style="color: red">
+   nhập đúng định dạng vd: abcxyz@gmail.com
+    </div>
+
+
+  <p>
+    <label for="passWord"> passWord </label>
+    <input type="text" id="passWord" name="passWord" formControlName="passWord">
+  </p>
+  <div *ngIf="registerForm.get('passWord').errors?.required&& (passWord?.dirty ||passWord?.touched)" style="color: red">
+    Không được bỏ trống
+  </div>
+
+  <p>
+    <label for="confirmPassword"> confimPassword </label>
+    <input type="text" id="confirmPassword" name="confirmPassword" formControlName="confirmPassword">
+  </p>
+  <div *ngIf="registerForm.get('confirmPassword').errors?.required&& (confirmPassword?.dirty ||confirmPassword?.touched)" style="color: red">
+    Không được bỏ trống
+  </div>
+
+
+  <p>
+    <label for="country">country </label>
+    <select id="country" name="country" formControlName="country">
+      <option [ngValue]="c.id" *ngFor="let c of countryList">
+       {{c.name}}
+      </option>
+    </select>
+  </p>
+  <div *ngIf="registerForm.get('country').errors?.required&& (country?.dirty ||country?.touched)" style="color: red">
+    Không được bỏ trống
+</div>
+
+  <p>
+    <label for="age"> age </label>
+    <input type="text" id="age" name="age" formControlName="age">
+  </p>
+  <div *ngIf="registerForm.get('age').errors?.required&& (age?.dirty ||age?.touched)" style="color: red">
+    Không được bỏ trống
+  </div>
+  <div *ngIf="registerForm.get('age').errors?.min&& (age?.dirty ||age?.touched)" style="color: red">
+    phải trên 18 tuổi
+  </div>
+  <div *ngIf="registerForm.get('age').errors?.max&& (age?.dirty ||age?.touched)" style="color: red">
+   không được quá 90 tuổi
+  </div>
+  <p>
+    <label>Gender </label>
+    <input type="radio" value="male"  name="gender" formControlName="gender"> Male
+    <input type="radio" value="female"  name="gender" formControlName="gender"> Female
+  </p>
+  <div *ngIf="registerForm.get('gender').errors?.required&& (gender?.dirty ||gender?.touched)" style="color: red">
+    Không được bỏ trống
+  </div>
+
+  <p>
+    <label for="phone"> phone </label>
+    <input type="text" id="phone" name="phone" formControlName="phone">
+  </p>
+  <div *ngIf="registerForm.get('phone').errors?.required&& (phone?.dirty ||phone?.touched)" style="color: red">
+    Không được bỏ trống
+  </div>
+  <div *ngIf="registerForm.get('phone').errors?.pattern&& (phone?.dirty ||phone?.touched)" style="color: red">
+    Không được bỏ trống
+  </div>
+  <p>
+    <button type="submit" [disabled]="!registerForm.valid">Submit</button>
+  </p>
+</form>
+
