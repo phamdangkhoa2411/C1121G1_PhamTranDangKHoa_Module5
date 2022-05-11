@@ -1,0 +1,26 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <p>
+    <label for="email">  email</label>
+    <input type="text" id="email" name="email" formControlName="email">
+  </p>
+  <div *ngIf="loginForm.get('email').errors?.required&& (email?.dirty ||email?.touched)" style="color: red">
+    Không được bỏ trống
+  </div>
+  <div *ngIf="loginForm.get('email').errors?.email&& (email?.dirty ||email?.touched)" style="color: red">
+    nhập đúng định dạng vd: abcxyz@gmail.com
+  </div>
+
+
+  <p>
+    <label for="passWord"> passWord </label>
+    <input type="text" id="passWord" name="passWord" formControlName="passWord">
+  </p>
+  <div *ngIf="loginForm.get('passWord').errors?.required&& (passWord?.dirty ||passWord?.touched)" style="color: red">
+    Không được bỏ trống
+  </div>
+
+
+<p>
+  <button type="submit" [disabled]="!loginForm.valid">Submit</button>
+</p>
+</form>

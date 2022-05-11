@@ -18,7 +18,7 @@ export class RegisterComponentComponent implements OnInit {
     country: new FormControl('',[Validators.required]),
     age: new FormControl('',[Validators.required,Validators.min(18),Validators.max(90)]),
     gender: new FormControl('',[Validators.required]),
-    phone: new FormControl('',[Validators.required])
+    phone: new FormControl('',[Validators.required,Validators.pattern("((09|03|07|08|05)+([0-9]{8})\\b)")])
   });
 
   get email() {
@@ -74,6 +74,5 @@ export class RegisterComponentComponent implements OnInit {
 
 
   onSubmit() {
-
   }
 }
