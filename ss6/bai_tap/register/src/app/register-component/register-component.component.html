@@ -10,10 +10,9 @@
    nhập đúng định dạng vd: abcxyz@gmail.com
     </div>
 
-
   <p>
     <label for="passWord"> passWord </label>
-    <input type="text" id="passWord" name="passWord" formControlName="passWord">
+    <input (change)="checkPass()" type="password" id="passWord" name="passWord" formControlName="passWord">
   </p>
   <div *ngIf="registerForm.get('passWord').errors?.required&& (passWord?.dirty ||passWord?.touched)" style="color: red">
     Không được bỏ trống
@@ -21,11 +20,15 @@
 
   <p>
     <label for="confirmPassword"> confimPassword </label>
-    <input type="text" id="confirmPassword" name="confirmPassword" formControlName="confirmPassword">
+    <input (change)="checkPass()" type="password" id="confirmPassword" name="confirmPassword" formControlName="confirmPassword">
   </p>
   <div *ngIf="registerForm.get('confirmPassword').errors?.required&& (confirmPassword?.dirty ||confirmPassword?.touched)" style="color: red">
     Không được bỏ trống
   </div>
+  <div *ngIf="registerForm.get('confirmPassword').errors?.check&& (confirmPassword?.dirty ||confirmPassword?.touched)" style="color: red">
+  pass word confirm phải trùng với pass word
+  </div>
+
 
 
   <p>
