@@ -1,0 +1,9 @@
+<h1>từ điển Anh Việt</h1>
+<table>
+
+    <tr *ngFor="let D of dictionaryList">
+      <a [routerLink]="['/dictionary', D.word]">{{D.word}}</a>
+    </tr>
+
+</table>
+<router-outlet></router-outlet>

@@ -32,7 +32,7 @@ export class RegisterComponentComponent implements OnInit {
     this.registerForm.get('confirmPassword').setErrors({'check' :true}) ;
   }
 
- 
+
   }
 
 
