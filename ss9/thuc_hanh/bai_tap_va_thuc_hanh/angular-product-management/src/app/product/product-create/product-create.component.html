@@ -1,0 +1,44 @@
+<h1>Tạo sản phẩm mới</h1>
+<form [formGroup]="productForm" (ngSubmit)="submit()">
+  <table>
+
+    <tr>
+      <td>Tên sản phẩm:</td>
+      <td><input type="text" formControlName="name"></td>
+    </tr>
+    <div *ngIf="productForm.get('name').errors?.required&& (name?.dirty ||name?.touched)" style="color: red">
+      Không được bỏ trống
+    </div>
+    <tr>
+      <td>Giá sản phẩm</td>
+      <td><input type="number" formControlName="price"></td>
+    </tr>
+    <div *ngIf="productForm.get('price').errors?.required&& (price?.dirty ||price?.touched)" style="color: red">
+      Không được bỏ trống
+    </div>
+    <div *ngIf="productForm.get('price').errors?.min&& (price?.dirty ||price?.touched)" style="color: red">
+      Không được nhỏ hơn 100 usa
+    </div>
+    <tr>
+      <td>Mô tả về sản phẩm</td>
+      <td><input type="text" formControlName="description"></td>
+    </tr>
+    <div *ngIf="productForm.get('description').errors?.required&& (description?.dirty ||description?.touched)"
+         style="color: red">
+      Không được bỏ trống
+    </div>
+    <select formControlName="category">
+      <option *ngFor="let cate of categories" [ngValue]="cate">{{cate.name}}</option>
+    </select>
+    <tr>
+      <div *ngIf="productForm.get('category').errors?.required&& (category?.dirty ||category?.touched)"
+           style="color: red">
+        Không được bỏ trống
+      </div>
+      <td></td>
+      <td>
+        <button>Tạo mới</button>
+      </td>
+    </tr>
+  </table>
+</form>
