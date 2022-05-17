@@ -1,10 +1,7 @@
 <h1>Tạo danh mục mới</h1>
 <form [formGroup]="productForm" (ngSubmit)="submit()">
-  <table>
-    <tr>
-      <td>id</td>
-      <td><input type="text" formControlName="id"></td>
-    </tr>
+  <table  >
+
     <tr>
       <td>name</td>
       <td><input type="text" formControlName="name"></td>
@@ -13,6 +10,16 @@
       <td>price</td>
       <td><input type="text" formControlName="price"></td>
     </tr>
+
+    <tr>
+      <td>status</td>
+     <td> <input type="text" formControlName="status">
+     </td>
+    </tr>
+
+    <select formControlName="category">
+      <option *ngFor="let cate of categories" [ngValue]="cate">{{cate.name}}</option>
+    </select>
     <tr>
       <td></td>
       <td>

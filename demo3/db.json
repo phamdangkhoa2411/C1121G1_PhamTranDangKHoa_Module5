@@ -1,0 +1,38 @@
+{
+  "product": [
+    {
+      "name": "phạm văn hậu",
+      "price": "3464",
+      "status": "gfdgd",
+      "category": {
+        "id": 3,
+        "name": "LG"
+      },
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "pham tran dang khoa",
+      "price": "09876543456789098",
+      "status": "kjhgf",
+      "category": {
+        "id": 3,
+        "name": "LG"
+      }
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "IPhone"
+    },
+    {
+      "id": 2,
+      "name": "Samsung"
+    },
+    {
+      "id": 3,
+      "name": "LG"
+    }
+  ]
+}

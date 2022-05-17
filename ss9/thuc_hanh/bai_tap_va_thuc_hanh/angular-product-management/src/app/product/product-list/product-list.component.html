@@ -16,9 +16,9 @@
     <td>{{product.price}}</td>
     <td>{{product.description}}</td>
     <td>{{product.category.name}}</td>
-    <td><button [routerLink]="['/product/edit/',product.id]"> edit </button></td>
+    <td><button [routerLink]="['/product/edit/',product.id]"  type="button" class="btn btn-primary" style="color: green"> edit </button></td>
     <td>
-    <button (click)="sendInfor(product.id,product.name)" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    <button (click)="sendInfor(product.id,product.name)" type="button" style="color: green" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
    Delete
     </button>
     </td>
@@ -44,3 +44,4 @@
     </div>
   </div>
 </div>
+

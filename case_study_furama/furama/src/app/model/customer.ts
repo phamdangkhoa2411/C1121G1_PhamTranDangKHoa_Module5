@@ -1,6 +1,6 @@
 export interface Customer {
-  idCustomer ?: number;
-  nameCustome?: string;
+  id ?: number;
+  nameCustomer?: string;
   birthdayCustomer?: string;
   genderCustomer ?: string;
   idCardCustomer?: string;

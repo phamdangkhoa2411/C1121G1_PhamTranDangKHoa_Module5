@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f6abdcac-7ae9-44fc-9c94-f0689edd9a88" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../case_study_furama/furama/src/app/model/customer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_furama/furama/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_furama/furama/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_furama/furama/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_furama/furama/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_furama/furama/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_furama/furama/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_furama/furama/src/app/contract.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_furama/furama/src/app/model/contract.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_furama/furama/src/app/create-customer/create-customer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_furama/furama/src/app/create-customer/create-customer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_furama/furama/src/app/create-customer/create-customer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_furama/furama/src/app/create-customer/create-customer.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_furama/furama/src/app/customer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_furama/furama/src/app/customer/customer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_furama/furama/src/app/customer/customer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_furama/furama/src/app/customer/customer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_furama/furama/src/app/customer/customer.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_furama/furama/src/app/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_furama/furama/src/app/header/header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_furama/furama/src/app/service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_furama/furama/src/app/model/service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo2/demo2/db.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo2/demo2/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../demo2/demo2/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo2/demo2/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../demo2/demo2/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo2/demo2/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../demo2/demo2/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo2/demo2/src/app/model/product.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../demo2/demo2/src/app/model/product.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo2/demo2/src/app/product-create/product-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../demo2/demo2/src/app/product-create/product-create.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo2/demo2/src/app/product-create/product-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../demo2/demo2/src/app/product-create/product-create.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo2/demo2/src/app/product/product.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../demo2/demo2/src/app/product/product.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo2/demo2/src/app/product/product.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../demo2/demo2/src/app/product/product.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo2/demo2/src/app/service/ProductService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../demo2/demo2/src/app/service/ProductService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo2/demo2/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../demo2/demo2/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss9/thuc_hanh/bai_tap_va_thuc_hanh/angular-product-management/src/app/product/product-list/product-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss9/thuc_hanh/bai_tap_va_thuc_hanh/angular-product-management/src/app/product/product-list/product-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss9/thuc_hanh/bai_tap_va_thuc_hanh/angular-product-management/src/app/service/category.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ss9/thuc_hanh/bai_tap_va_thuc_hanh/angular-product-management/src/app/service/category.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss9/thuc_hanh/bai_tap_va_thuc_hanh/angular-product-management/src/app/service/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ss9/thuc_hanh/bai_tap_va_thuc_hanh/angular-product-management/src/app/service/product.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss9/thuc_hanh/bai_tap_va_thuc_hanh/db.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="29IAgGm6UxpIlrosMi8BhueNqSb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f6abdcac-7ae9-44fc-9c94-f0689edd9a88" name="Default Changelist" comment="" />
+      <created>1652790335969</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1652790335969</updated>
+      <workItem from="1652790338665" duration="2026000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+</project>

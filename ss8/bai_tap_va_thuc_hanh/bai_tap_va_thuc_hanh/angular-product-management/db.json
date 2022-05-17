@@ -25,16 +25,6 @@
       }
     },
     {
-      "name": "iphone 7",
-      "price": 70,
-      "description": "hậu ngu ngõ",
-      "id": 6,
-      "category": {
-        "id": 1,
-        "name": "IPhone"
-      }
-    },
-    {
       "id": 10,
       "name": "galaxy s7 eged",
       "price": 80,

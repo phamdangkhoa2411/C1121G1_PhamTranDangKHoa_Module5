@@ -1,0 +1,58 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "IPhone"
+    },
+    {
+      "id": 2,
+      "name": "Samsung"
+    },
+    {
+      "id": 3,
+      "name": "LG"
+    }
+  ],
+  "products": [
+    {
+      "name": "iphone x",
+      "price": 601,
+      "description": "hậu ngu ngox",
+      "id": 3,
+      "category": {
+        "id": 1,
+        "name": "IPhone"
+      }
+    },
+    {
+      "id": 10,
+      "name": "galaxy s7 eged",
+      "price": 80,
+      "description": "sdfk",
+      "category": {
+        "id": 2,
+        "name": "Samsung"
+      }
+    },
+    {
+      "id": 4,
+      "name": "lg V40",
+      "price": 70,
+      "description": "salcdodjk",
+      "category": {
+        "id": 3,
+        "name": "LG"
+      }
+    },
+    {
+      "name": "iphone 13 pro max",
+      "price": 1100,
+      "description": "new",
+      "category": {
+        "id": 1,
+        "name": "IPhone"
+      },
+      "id": 11
+    }
+  ]
+}

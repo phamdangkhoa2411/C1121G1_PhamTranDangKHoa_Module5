@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Product} from "../model/product";
 import {ProductService} from "../service/ProductService";
+import {Category} from "../model/category";
 
 @Component({
   selector: 'app-product',
@@ -9,7 +10,11 @@ import {ProductService} from "../service/ProductService";
   providers: [ProductService]
 })
 export class ProductComponent implements OnInit {
+  categories: Category[] = [];
   products: Product[]=[];
+  nameDelete: string;
+   idDelete = 0;
+
 
   constructor(private productService: ProductService) {
   }
@@ -24,4 +29,20 @@ export class ProductComponent implements OnInit {
   }
 
 
-}
+  deleteProductOb() {
+    this.productService.deleteProduct(this.idDelete).subscribe(() => {
+      window.location.reload();
+      alert("xóa thành công");
+    }, e => {
+      console.log(e);
+    });
+  }
+  sendInfor(id: number, name: string) {
+    this.idDelete = id;
+    this.nameDelete = name;
+  }
+  }
+
+
+
+

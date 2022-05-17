@@ -15,6 +15,7 @@ import { CreateContractComponent } from './create-contract/create-contract.compo
 import { VillaComponent } from './service-create/villa/villa.component';
 import { RoomComponent } from './service-create/room/room.component';
 import { HouseComponent } from './service-create/house/house.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HouseComponent } from './service-create/house/house.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
