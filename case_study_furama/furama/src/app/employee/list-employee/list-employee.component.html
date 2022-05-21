@@ -1,0 +1,128 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div>
+        <br>
+        <div class="d-flex bd-highlight">
+          <div class="p-2 flex-grow-1 bd-highlight">
+            <a type="button" class="btn btn-primary "  [routerLink]="['/employee/addEmployee']" routerLinkActive="router-link-active">THÊM MỚI NHÂN VIÊN</a>
+          </div>
+          <div>
+
+            <div class="d-flex bd-highlight">
+              <div class="p-2 flex-fill bd-highlight">
+                <input type="text" id="customerName"
+                       placeholder="Tên Nhân Viên" style="width:150px;height: 38px" [(ngModel)]="name">
+              </div>
+              <div class="p-2 flex-fill bd-highlight">
+                <input type="text" id="customerAddress" placeholder="Địa chỉ"
+                       style="width:120px;height: 38px"  [(ngModel)]="address"><br><br>
+              </div>
+              <div class="p-2 flex-fill bd-highlight">
+                <select id="division"
+                        class="form-control"
+                        required="required"  [(ngModel)]="division"   style="width:150px;height: 38px" >
+                  <option value="" disabled [selected]="true">Bộ Phận !!!</option>
+                  <option  *ngFor="let dv of divisionList" [ngValue]="dv.id">{{dv.name}}</option>
+
+                </select>
+              </div>
+
+              <div class="p-2 flex-fill bd-highlight">
+                <select id="position"
+                        class="form-control"
+                        required="required"   [(ngModel)]="position"   style="width:120px;height: 38px"   >
+                  <option value="" disabled [selected]="true">Chức Vụ !!!</option>
+                  <option  *ngFor="let ps of positionList" [ngValue]="ps.id">{{ps.name}}</option>
+                </select>
+              </div>
+
+              <div class="p-2 flex-fill bd-highlight">
+                <select id="educationDegree"
+                        class="form-control" required="required"  [(ngModel)]="education"  style="width:120px;height: 38px" >
+                  <option value="" disabled [selected]="true">Học Vấn!!!</option>
+                  <option  *ngFor="let ed of educationList" [ngValue]="ed.id">{{ed.name}}</option>
+
+
+                </select>
+              </div>
+              <div class="p-2 flex-fill bd-highlight">
+                <button type="submit" class="btn btn-primary" (click)="getSearch()">TÌM KIẾM</button>
+                <button type="submit" class="btn btn-primary" (click)="clear()">CLEAR</button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+      <p class="fs-2 fw-bolder text-center" style="color: #ff5050">DANH SÁCH NHÂN VIÊN</p>
+      <table class="table">
+        <thead>
+        <tr style="color: #ff5050 ; font-size: 20px ; text-align: center">
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">BirthDay</th>
+          <th scope="col">Address</th>
+          <th scope="col">Education</th>
+          <th scope="col">Position</th>
+          <th scope="col">Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let emp of employeeList " style="text-align: center">
+          <th>{{emp.id}}</th>
+          <th>{{emp.name}}</th>
+          <th>{{emp.email}}</th>
+          <th>{{emp.birthDay}}</th>
+          <th>{{emp.address}}</th>
+          <th>{{emp.education.name}}</th>
+          <th>{{emp.position.name}}</th>
+
+          <th>
+            <button type="button" class="btn btn-primary" style="margin-left: 20px" >
+              <i class="fas fa-cloud"></i>
+            </button>
+
+            <a type="button" class="btn btn-primary" [routerLink]="['/employee/updateEmployee/'+emp.id]" routerLinkActive="router-link-active" style="margin-left: 20px">
+              <i class="far fa-edit"></i>
+            </a>
+
+            <button type="button" class="btn btn-danger" style="margin-left: 20px" (click)="openDialog(emp.id)" >
+              <i class="fas fa-trash"></i>
+            </button>
+
+          </th>
+        </tr>
+        </tbody>
+      </table>
+
+
+
+
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-end">
+          <li class="page-item">
+            <button class="page-link"  (click)="backPage()">Previous</button>
+          </li>
+          <li class="page-item"><a class="page-link">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item">
+            <button class="page-link" (click)="nextPage()">Next</button>
+          </li>
+        </ul>
+      </nav>
+
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+

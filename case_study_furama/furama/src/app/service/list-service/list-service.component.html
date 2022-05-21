@@ -1,0 +1,86 @@
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-12">
+      <div>
+        <br>
+        <div class="d-flex bd-highlight">
+          <div class="p-2 flex-grow-1 bd-highlight">
+            <a type="button" class="btn btn-outline-primary" [routerLink]="['/service/addService']" routerLinkActive="router-link-active">THÊM MỚI DỊCH VỤ</a>
+          </div>
+          <div class="d-flex bd-highlight">
+              <div class="p-2 flex-fill bd-highlight">
+                <input type="text" id="serviceName"  [(ngModel)]="name"  placeholder="Tên Dịch Vụ"
+                       style="width:200px;height: 38px">
+              </div>
+              <div class="p-2 flex-fill bd-highlight">
+                <select id="rentType" style="width:200px;height: 38px"  [(ngModel)]="rentType">
+                  <option [selected]="true" value="" disabled>Loại Thuê</option>
+                  <option [ngValue]="rt.id" *ngFor="let rt of rentTypeList">{{rt.name}}</option>
+                </select>
+              </div>
+              <div class="p-2 flex-fill bd-highlight">
+                <select id="serviceType" style="width:200px;height: 38px"  [(ngModel)]="serviceType">
+                  <option  disabled [selected]="true" value="">Loại Dịch Vụ</option>
+                  <option [ngValue]="svt.id" *ngFor="let svt of serviceTypeList">{{svt.name}}</option>
+                </select>
+              </div>
+
+
+              <div class="p-2 flex-fill bd-highlight">
+                <button type="submit" (click)="searchService()" class="btn btn-outline-primary">TÌM KIẾM</button>
+                <button type="submit" (click)="clear()" class="btn btn-outline-primary">Clear</button>
+              </div>
+            </div>
+        </div>
+
+      </div>
+      <p class="fs-2 fw-bolder text-center" style="color: #ff5050">DANH SÁCH DỊCH VỤ</p>
+      <table class="table">
+        <thead>
+        <tr style="color: #ff5050 ; font-size: 20px">
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Service Area</th>
+          <th scope="col">Cost</th>
+          <th scope="col">Max People</th>
+          <th scope="col">Standard Room</th>
+          <th scope="col">Service Type</th>
+          <th scope="col">Rent Type</th>
+          <th scope="col">Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let sv of serviceList">
+          <th>{{sv.id}}</th>
+          <th>{{sv.name}}</th>
+          <th>{{sv.area}}</th>
+          <th>{{sv.cost | currency : 'VND'}}</th>
+          <th>{{sv.maxPeople}}</th>
+          <th>{{sv.standardRoom}}</th>
+          <th>{{sv.serviceType.name}}</th>
+          <th>{{sv.rentType.name}}</th>
+
+          <th>
+            <button type="button" class="btn btn-primary btnViewService" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+              <i class="fas fa-cloud"></i>
+            </button>
+
+            <a type="button" class="btn btn-primary">
+              <i class="far fa-edit" [routerLink]="['/service/updateService/'+ sv.id]" routerLinkActive="router-link-active"></i>
+            </a>
+            <button type="button" class="btn btn-danger" (click)="openDialog(sv.id)">
+              <i class="fas fa-trash" ></i>
+            </button>
+
+
+          </th>
+        </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </div>
+</div>

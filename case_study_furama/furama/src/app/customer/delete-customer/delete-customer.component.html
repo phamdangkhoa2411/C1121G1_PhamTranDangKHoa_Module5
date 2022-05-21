@@ -1,0 +1,41 @@
+<h1  style="text-align: center">Are you sure?</h1>
+
+<div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col" style="text-align: center">{{this.customer.id}}</th>
+    </tr>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col" style="text-align: center">{{this.customer.name}}</th>
+    </tr>
+    <tr>
+
+    <tr>
+      <th scope="col">Address</th>
+      <th scope="col" style="text-align: center">{{this.customer.adress}}</th>
+    </tr>
+    <tr>
+      <th scope="col">Email</th>
+      <th scope="col" style="text-align: center">{{this.customer.email}}</th>
+    </tr>
+    <tr>
+      <th scope="col">Phone</th>
+      <th scope="col" style="text-align: center">{{this.customer.phone}}</th>
+    </tr>
+    <tr>
+      <th scope="col">Type</th>
+      <th scope="col" style="text-align: center">{{this.customer.type}}</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+</div>
+<div class="modal-footer justify-content-center">
+  <button type="button" class="btn btn-secondary" (click)="onNoClick()">Back</button>
+  <button type="button" class="btn btn-danger" (click)="deleteCustomer(this.customer.id)">Delete</button>
+</div>

@@ -1,0 +1,82 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div>
+        <br>
+        <div class="d-flex bd-highlight">
+          <div class="p-2 flex-grow-1 bd-highlight">
+            <a type="button" class="btn btn-primary "  [routerLink]="['/customer/addCustomer']" routerLinkActive="router-link-active">THÊM MỚI KHÁCH HÀNG</a>
+          </div>
+          <form>
+
+            <div class="d-flex bd-highlight">
+              <div class="p-2 flex-fill bd-highlight">
+                <input type="text" id="customerName" name="customerName"
+                       placeholder="Tên Khách Hàng" style="width:200px;height: 38px">
+              </div>
+              <div class="p-2 flex-fill bd-highlight">
+                <input type="text" id="customerAddress" name="customerAddress" placeholder="Địa chỉ"
+                       style="width:200px;height: 38px"><br><br>
+              </div>
+              <div class="p-2 flex-fill bd-highlight">
+                <select id="customerType" style="width:200px;height: 38px" name="customerType">
+                  <option selected disabled>Loại Khách !</option>
+                </select>
+              </div>
+              <div class="p-2 flex-fill bd-highlight">
+                <button type="submit" class="btn btn-primary">TÌM KIẾM</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+      <p class="fs-2 fw-bolder text-center" style="color: #ff5050">DANH SÁCH KHÁCH HÀNG</p>
+      <table class="table border-0">
+        <thead>
+        <tr style="color: #ff5050 ; font-size: 20px;text-align: center">
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Gender</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Adress</th>
+          <th scope="col">Type</th>
+          <th scope="col">Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let ctm of customerList" style="text-align: center">
+          <th>{{ctm.id}}</th>
+          <th>{{ctm.name}}</th>
+          <th *ngIf="ctm.gender == true">Nam</th>
+          <th *ngIf="ctm.gender == false">Nữ</th>
+          <th>{{ctm.email}}</th>
+          <th>{{ctm.phone}}</th>
+          <th>{{ctm.adress}}</th>
+          <th>{{ctm.type}}</th>
+
+          <th>
+            <button type="button" class="btn btn-primary" style="margin-left: 50px">
+              <i class="fas fa-cloud"></i>
+            </button>
+
+            <button type="button" class="btn btn-primary" [routerLink]="['/customer/updateCustomer' ,ctm.id]" routerLinkActive="router-link-active" style="margin-left: 20px">
+              <i class="far fa-edit"></i>
+            </button>
+
+            <button type="button" class="btn btn-danger" (click)="openDialog(ctm.id)" style="margin-left: 20px">
+              <i class="fas fa-trash"></i>
+            </button>
+
+          </th>
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+
+

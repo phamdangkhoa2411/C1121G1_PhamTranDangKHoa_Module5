@@ -1,0 +1,15 @@
+<form [formGroup]="formHome" (ngSubmit)="addHome()">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Name</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" formControlName="name">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlFile1">Example file input</label>
+    <input type="file" class="form-control-file" id="exampleFormControlFile1" formControlName="img" (change)="showPreview($event)">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Price</label>
+    <input type="email" class="form-control" formControlName="price">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

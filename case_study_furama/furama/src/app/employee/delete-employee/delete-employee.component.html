@@ -1,0 +1,38 @@
+<h1  style="text-align: center">Are you sure?</h1>
+
+<div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col" style="text-align: center">{{this.employee.id}}</th>
+    </tr>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col" style="text-align: center">{{this.employee.name}}</th>
+    </tr>
+    <tr>
+
+    <tr>
+      <th scope="col">Address</th>
+      <th scope="col" style="text-align: center">{{this.employee.address}}</th>
+    </tr>
+    <tr>
+      <th scope="col">Email</th>
+      <th scope="col" style="text-align: center">{{this.employee.email}}</th>
+    </tr>
+    <tr>
+      <th scope="col">Phone</th>
+      <th scope="col" style="text-align: center">{{this.employee.phone}}</th>
+    </tr>
+
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+</div>
+<div class="modal-footer justify-content-center">
+  <button type="button" class="btn btn-secondary" (click)="onNoClick()">Back</button>
+  <button type="button" class="btn btn-danger" (click)="deleteEmployee()">Delete</button>
+</div>

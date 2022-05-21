@@ -1,0 +1,243 @@
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-12">
+      <div class="container">
+        <div class=" text-center mt-5 ">
+          <h1 style="color: #ff5050">CHỈNH SỬA NHÂN VIÊN</h1>
+        </div>
+        <div class="row ">
+          <div class="content_01">
+            <div class="col-lg-7 mx-auto" style="width: 100%">
+              <div class="card mt-2 mx-auto p-4 bg-light">
+                <div class="card-body bg-light">
+                  <div class="container">
+                    <form id="contact-form" [formGroup]="employeeForm" (ngSubmit)="updateEmployee(id)">
+                      <div class="controls">
+                        <div class="row">
+                          <input type="hidden" formControlName="id">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label for="employeeName">Name *</label>
+                              <input id="employeeName" type="text"
+                                     class="form-control"
+                                     placeholder="Please enter your Name *"
+                                     required="required" formControlName="name">
+                              <div *ngIf="employeeForm.controls.name.invalid && flagValid">
+                                <div *ngIf="employeeForm.controls.name.errors">
+                                  <div *ngIf="employeeForm.controls.name.errors.required">
+                                    <p style="color: red">Không Được Để Trống !!!</p>
+                                  </div>
+                                  <div *ngIf="employeeForm.controls.name.errors.pattern">
+                                    <p style="color: red">Không Đúng Định Dạng !!!</p>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group"><label for="employeeBirthday">Birthday
+                              *</label> <input formControlName="birthDay" id="employeeBirthday" type="date"
+                                               class="form-control" required="required">
+
+                              <div *ngIf="employeeForm.controls.birthDay.invalid && flagValid">
+                                <div *ngIf="employeeForm.controls.birthDay.errors">
+                                  <div *ngIf="employeeForm.controls.birthDay.errors.required">
+                                    <p style="color: red">Bắt Buộc Chọn !!!</p>
+                                  </div>
+                                  <div *ngIf="employeeForm.controls.birthDay.errors.checkAge">
+                                    <p style="color: red">Chưa Đủ 18 Mà Đi Làm À !!!</p>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label for="employeeIdCard">ID CARD *</label>
+                              <input id="employeeIdCard" type="text" class="form-control"
+                                     placeholder="Please enter your Id Card *"
+                                     required="required" formControlName="idCard">
+                              <div *ngIf="employeeForm.controls.idCard.invalid && flagValid">
+                                <div *ngIf="employeeForm.controls.idCard.errors">
+                                  <div *ngIf="employeeForm.controls.idCard.errors.required">
+                                    <p style="color: red">Bắt Buộc Nhập !!!</p>
+                                  </div>
+                                  <div *ngIf="employeeForm.controls.idCard.errors.pattern">
+                                    <p style="color: red">Không Đúng Định Dạng !!!</p>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label for="employeeSalary">SALARY *</label>
+                              <input id="employeeSalary" type="text"
+                                     class="form-control"
+                                     placeholder="Please enter your Salary *"
+                                     required="required" formControlName="salary">
+                              <div *ngIf="employeeForm.controls.salary.invalid && flagValid">
+                                <div *ngIf="employeeForm.controls.salary.errors">
+                                  <div *ngIf="employeeForm.controls.salary.errors.required">
+                                    <p style="color: red">Không Có Bỏ Trống !!!</p>
+                                  </div>
+                                  <div *ngIf="employeeForm.controls.salary.errors.salaryCode">
+                                    <p style="color: red">Trả Lương Hơn 500.000 Mày !!!</p>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+
+
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group"><label for="employeePhone">PHONE
+                              *</label> <input id="employeePhone" type="text"
+                                               class="form-control"
+                                               placeholder="Please enter your Phone *"
+                                               required="required" formControlName="phone">
+                              <div *ngIf="employeeForm.controls.phone.invalid && flagValid">
+                                <div *ngIf="employeeForm.controls.phone.errors">
+                                  <div *ngIf="employeeForm.controls.phone.errors.required">
+                                    <p style="color: red">Không Được Để Trống !!!</p>
+                                  </div>
+                                  <div *ngIf="employeeForm.controls.phone.errors.pattern">
+                                    <p style="color: red">Không Đúng Định Dạng !!!</p>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label for="employeeEmail">Email *</label>
+                              <input id="employeeEmail" type="email"
+                                     class="form-control"
+                                     placeholder="Please enter your Email *"
+                                     required="required" formControlName="email">
+                              <div *ngIf="employeeForm.controls.email.invalid && flagValid">
+                                <div *ngIf="employeeForm.controls.email.errors">
+                                  <div *ngIf="employeeForm.controls.email.errors.required">
+                                    <p style="color: red">Không Được Để Trống !!!</p>
+                                  </div>
+                                  <div *ngIf="employeeForm.controls.email.errors.email">
+                                    <p style="color: red">Không Đúng Định Dạng !!!</p>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group"><label for="employeeAdress">ADRESS
+                              *</label> <input id="employeeAdress" type="text"
+                                               class="form-control"
+                                               placeholder="Please enter your Adress *"
+                                               required="required" formControlName="address">
+                              <div *ngIf="employeeForm.controls.address.invalid && flagValid">
+                                <div *ngIf="employeeForm.controls.address.errors">
+                                  <div *ngIf="employeeForm.controls.address.errors.required">
+                                    <p style="color: red">Không Được Để Trống !!!</p>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group"><label for="position">POSITION *</label>
+                              <select id="position"
+                                      class="form-control"
+                                      required="required" formControlName="position">
+                                <option *ngFor="let ps of positionList" [ngValue]="ps"
+                                        [selected]="ps.id == employeeForm.controls.position.value.id"
+                                >{{ps.name}}</option>
+
+                              </select>
+                              <div *ngIf="employeeForm.controls.position.invalid && flagValid">
+                                <div *ngIf="employeeForm.controls.position.errors">
+                                  <div *ngIf="employeeForm.controls.position.errors.required">
+                                    <p style="color: red">Bắt Buộc Chọn !!!</p>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group"><label for="educationDegree">EDUCATION
+                              *</label>
+                              <select id="educationDegree"
+                                      class="form-control" required="required" formControlName="education">
+                                <option *ngFor="let ed of educationList" [ngValue]="ed"
+                                        [selected]="ed.id == employeeForm.controls.education.value.id"
+                                >{{ed.name}}</option>
+                              </select>
+                              <div *ngIf="employeeForm.controls.education.invalid && flagValid">
+                                <div *ngIf="employeeForm.controls.education.errors">
+                                  <div *ngIf="employeeForm.controls.education.errors.required">
+                                    <p style="color: red">Bắt Buộc Chọn !!!</p>
+                                  </div>
+                                </div>
+
+                              </div>
+
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group"><label for="division">DIVISION
+                              *</label>
+                              <select id="division"
+                                      class="form-control"
+                                      required="required" formControlName="division">
+                                <option *ngFor="let dv of divisionList" [ngValue]="dv"
+                                        [selected]="dv.id == employeeForm.controls.division.value.id"
+                                >{{dv.name}}</option>
+                              </select>
+
+                              <div *ngIf="employeeForm.controls.division.invalid && flagValid">
+                                <div *ngIf="employeeForm.controls.division.errors">
+                                  <div *ngIf="employeeForm.controls.division.errors.required">
+                                    <p style="color: red">Bắt Buộc Chọn !!!</p>
+                                  </div>
+                                </div>
+
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <input type="hidden" formControlName="flagDeleteCustomer">
+
+                      <br>
+                      <div class="row">
+                        <div class="col-md-12"><input type="submit"
+                                                      class="btn btn-success btn-send pt-2 btn-block "
+                                                      value="Submit"></div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div> <!-- /.8 -->
+            </div> <!-- /.row-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
