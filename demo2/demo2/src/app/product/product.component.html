@@ -1,30 +1,52 @@
 <h1>list product</h1>
-<a routerLink="/product/create">Tạo mới sản phẩm</a>
-<table>
+<button class="btn btn-danger" routerLink="/product/create">Tạo mới sản phẩm</button>
+<div>
+
+  <input style="width: 200px;height: 30px"  #keyOne  type="text" placeholder="searchByName"
+         aria-label="Search"/>
+  <input style="width: 200px;height: 30px"  #keyTwo type="text" placeholder="searchByPrice"
+         aria-label="Search"/>
+  <input style="width: 200px;height: 30px"  #keyThree type="date" placeholder="searchByPrice"
+         aria-label="Search"/>
+  <br>
+  <button style="width: 200px; height: 50px" class="btn btn-outline-success my-2 my-sn-0" type="button"
+          (click)="search(keyOne.value,keyTwo.value,keyThree.value)">Tìm Kiếm
+  </button>
+  <button style="width: 200px; height: 50px" class="btn btn-outline-success my-2 my-sn-0" type="button"
+         (click)="deleteOpion()">Delete Optional
+  </button>
+</div>
+
+<table  class="table table-striped">
   <tr>
+    <th>del Option</th>
     <th>id</th>
     <th>name</th>
     <th>price</th>
-    <th>status</th>
+    <th>status
+    <th>date</th>
     <th>category</th>
-    <td colspan="2"></td>
+    <th>edit</th>
+    <th>delete</th>
   </tr>
-  <tr *ngFor="let p of products">
+  <tr *ngFor="let p of products  | paginate : {itemsPerPage : 3 , currentPage : a}">
+    <input type="checkbox" [value]="p.id" >
     <th>{{p.id}}</th>
     <th>{{p.name}} </th>
     <th>{{p.price}} </th>
     <th>{{p.status}}</th>
+    <th>{{p.date}}</th>
     <th>{{p.category.name}}</th>
-    <td><a routerLink="/product/edit/{{p.id}}">Edit</a></td>
-    <td>
-      <button (click)="sendInfor(p.id,p.name)" type="button" style="color: green" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    <th><button class="btn btn-outline-success" routerLink="/product/edit/{{p.id}}">Edit</button></th>
+    <th>
+      <button (click)="sendInfor(p.id,p.name)" type="button" style="color: green" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         Delete
       </button>
-    </td>
+    </th>
   </tr>
 
 </table>
-
+<pagination-controls (pageChange)="a=$event"></pagination-controls>
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -43,3 +65,4 @@
     </div>
   </div>
 </div>
+

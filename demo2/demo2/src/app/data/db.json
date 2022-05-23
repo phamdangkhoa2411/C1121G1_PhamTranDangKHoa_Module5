@@ -1,0 +1,40 @@
+{
+  "product": [
+    {
+      "name": "iphone 13",
+      "price": "900",
+      "status": "new",
+      "date": "2022-05-19",
+      "category": {
+        "id": 1,
+        "name": "IPhone"
+      },
+      "id": 7
+    },
+    {
+      "name": "galaxy s20 ultra",
+      "price": "800",
+      "status": "new",
+      "date": "2020-05-13",
+      "category": {
+        "id": 2,
+        "name": "Samsung"
+      },
+      "id": 8
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "IPhone"
+    },
+    {
+      "id": 2,
+      "name": "Samsung"
+    },
+    {
+      "id": 3,
+      "name": "LG"
+    }
+  ]
+}

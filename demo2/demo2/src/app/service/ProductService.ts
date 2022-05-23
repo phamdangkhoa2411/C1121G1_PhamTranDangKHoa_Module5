@@ -39,6 +39,9 @@ export class  ProductService {
   deleteProduct(id: number): Observable<Product> {
     return this.http.delete<Product>(`${API_URL}/product/${id}`);
   }
-
+  // Search By Name
+  findByKey(name: string,price : string,date : string):Observable<any> {
+    return this.http.get<any>(`${API_URL}/product?name_like=${name}&price_like=${price}&date_like=${date}`);
+  }
 }
 

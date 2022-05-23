@@ -1,0 +1,145 @@
+<form [formGroup]="createForm" >
+  <table class="table table-striped">
+    <tr>
+      <td>Danh Mục</td>
+      <td>
+        <select formControlName="danhMuc">
+          <option value="nhà đất">nhà đất</option>
+          <option value="đất tư nhân">đất tư nhân</option>
+        </select>
+      </td>
+    </tr>
+    <div *ngIf="createForm.get('danhMuc').errors?.required&&(danhMuc?.dirty ||danhMuc?.touched)" style="color: red">
+      Không được bỏ trống.
+    </div>
+
+    <tr>
+      <td>vùng miền</td>
+      <td><input type="text" formControlName="vungMien"></td>
+    </tr>
+    <div *ngIf="createForm.get('vungMien').errors?.required&&(vungMien?.dirty ||vungMien?.touched)" style="color: red">
+      Không được bỏ trống.
+    </div>
+
+    <tr>
+      <td>bạn là </td>
+      <td>
+        <select formControlName="banLa">
+          <option value="cá nhân">cá nhân</option>
+          <option value="công ty">công ty</option>
+        </select>
+      </td>
+    </tr>
+    <div *ngIf="createForm.get('banLa').errors?.required&&(banLa?.dirty ||banLa?.touched)" style="color: red">
+      Không được bỏ trống.
+    </div>
+    <tr>
+      <td>bạn đăng tin</td>
+      <td>
+        <input type="radio" formControlName="banDangTin" value="cần bán"> <label>cần bán</label>
+        <input type="radio" formControlName="banDangTin" value="cần mua"><label>cần mua</label>
+        <input type="radio" formControlName="banDangTin"value="cho thuê"><label>cho thuê</label>
+        <input type="radio" formControlName="banDangTin" value="cần thuê"><label>cần thuê</label>
+
+      </td>
+    </tr>
+    <div *ngIf="createForm.get('banDangTin').errors?.required&&(banDangTin?.dirty ||banDangTin?.touched)" style="color: red">
+      Không được bỏ trống.
+    </div>
+    <tr>
+      <td>tình trạng</td>
+      <td>
+      <input type="radio" formControlName="tinhTrang"value="mới"><label>mới</label>
+      <input type="radio" formControlName="tinhTrang" value="đã qua sử dụng"><label>đã qua sử dụng</label>
+      </td>
+    </tr>
+    <div *ngIf="createForm.get('tinhTrang').errors?.required&&(tinhTrang?.dirty ||tinhTrang?.touched)" style="color: red">
+      Không được bỏ trống.
+    </div>
+    <tr>
+      <td>địa chỉ </td>
+      <td><input type="text" formControlName="diaChi"></td>
+    </tr>
+    <div *ngIf="createForm.get('diaChi').errors?.required&&(diaChi?.dirty ||diaChi?.touched)" style="color: red">
+      Không được bỏ trống.
+    </div>
+    <tr>
+      <td>diện tích</td>
+      <td><input type="text" formControlName="dienTich"></td>
+    </tr>
+    <div *ngIf="createForm.get('dienTich').errors?.required&&(dienTich?.dirty ||dienTich?.touched)" style="color: red">
+      Không được bỏ trống.
+    </div>
+    <div *ngIf="createForm.get('dienTich').errors?.min&&(dienTich?.dirty ||dienTich?.touched)" style="color: red">
+      phải lớn hơn 20m2.
+    </div>
+    <div *ngIf="createForm.get('dienTich').errors?.pattern&&(dienTich?.dirty ||dienTich?.touched)" style="color: red">
+      phải là số không được là chữ.
+    </div>
+
+    <tr>
+      <td>hướng</td>
+      <td>
+        <select formControlName="huong">
+          <option value="Đông">Đông</option>
+          <option value="Tây">Tây</option>
+          <option value="Nam">Nam</option>
+          <option value="Bắc">Bắc</option>
+          <option value="Tây Bắc">Tây Bắc</option>
+          <option value="Đông Nam">Đông Nam</option>
+
+        </select>
+      </td>
+    </tr>
+    <div *ngIf="createForm.get('huong').errors?.required&&(huong  ?.dirty ||huong?.touched)" style="color: red">
+      Không được bỏ trống.
+    </div>
+
+
+    <tr>
+      <td>tựa đề</td>
+      <td><input type="text" formControlName="tuaDe"></td>
+    </tr>
+    <div *ngIf="createForm.get('tuaDe').errors?.required&&(tuaDe?.dirty ||tuaDe?.touched)" style="color: red">
+      Không được bỏ trống.
+    </div>
+
+    <tr>
+      <td>nội dung</td>
+      <td><input type="text" formControlName="noiDung"></td>
+    </tr>
+    <div *ngIf="createForm.get('noiDung').errors?.required&&(noiDung?.dirty ||noiDung?.touched)" style="color: red">
+      Không được bỏ trống.
+    </div>
+
+    <tr>
+      <td>giá</td>
+      <td><input type="text" formControlName="gia"></td>
+    </tr>
+    <div *ngIf="createForm.get('gia').errors?.required&&(gia?.dirty ||gia?.touched)" style="color: red">
+      Không được bỏ trống.
+    </div>
+    <div *ngIf="createForm.get('gia').errors?.min&&(gia?.dirty ||gia?.touched)" style="color: red">
+     giá phải lớn hơn 1000000000 VND.
+    </div>
+    <div *ngIf="createForm.get('gia').errors?.pattern&&(gia?.dirty ||gia?.touched)" style="color: red">
+      phải là số không được là chữ.
+    </div>
+
+
+    <tr>
+      <td>hình ảnh</td>
+      <td><input type="text" formControlName="hinhAnh"></td>
+    </tr>
+    <div *ngIf="createForm.get('hinhAnh').errors?.required&&(hinhAnh?.dirty ||hinhAnh?.touched)" style="color: red">
+      Không được bỏ trống.
+    </div>
+
+    <tr>
+      <td>
+        <button type="submit" [disabled]="!createForm.valid">Tạo mới</button>
+      </td>
+    </tr>
+
+  </table>
+</form>

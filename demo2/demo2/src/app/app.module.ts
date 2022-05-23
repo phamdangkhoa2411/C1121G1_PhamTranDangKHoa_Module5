@@ -8,6 +8,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { ProductCreateComponent } from './product-create/product-create.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { ProductEditComponent } from './product-edit/product-edit.component';
+import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

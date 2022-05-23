@@ -5,5 +5,6 @@ export interface Product {
   name ?: string ;
   price ?: string ;
   status ?: string ;
+  date?: string ;
   category ?: Category ;
 }

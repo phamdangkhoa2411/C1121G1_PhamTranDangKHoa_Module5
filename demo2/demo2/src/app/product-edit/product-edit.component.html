@@ -10,8 +10,12 @@
       <td><input type="number" formControlName="price"></td>
     </tr>
     <tr>
-      <td>Mô tả về sản phẩm</td>
+      <td>trạg thái</td>
       <td><input type="text" formControlName="status"></td>
+    </tr>
+    <tr>
+      <td>date</td>
+      <td><input type="date" formControlName="date"></td>
     </tr>
     <select [compareWith]="comparefn" formControlName="category">
     <option *ngFor="let cate of categories"  [ngValue]="cate">{{cate.name}}</option>

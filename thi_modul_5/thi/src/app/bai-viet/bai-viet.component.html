@@ -1,0 +1,45 @@
+<h1>Danh Sách các bài viết đã đăng</h1>
+<button class="btn btn-danger" routerLink="/create">Tạo mới bản tin</button>
+<div>
+
+  <input style="width: 200px;height: 30px"  #keyOne  type="text" placeholder="tìm kiếm theo diện tích"
+         aria-label="Search"/>
+  <input style="width: 200px;height: 30px"  #keyTwo type="text" placeholder="tìm kiếm theo hướng"
+         aria-label="Search"/>
+  <input style="width: 200px;height: 30px"  #keyThree type="text" placeholder="tìm kiếm theo giá"
+         aria-label="Search"/>
+  <br>
+<!--  <button style="width: 200px; height: 50px" class="btn btn-outline-success my-2 my-sn-0" type="button"-->
+<!--          (click)="search(keyOne.value,keyTwo.value,keyThree.value)">Tìm Kiếm-->
+<!--  </button>-->
+</div>
+<table class="table table-striped">
+  <tr>
+    <th>danh mục</th>
+    <th>vùng miền</th>
+    <th>đối tượng</th>
+    <th>tin đăng</th>
+    <th>tình trạng</th>
+    <th>địa chỉ</th>
+    <th>diện tích</th>
+    <th> hướng</th>
+    <th>tựa đề</th>
+    <th>nội dung</th>
+    <th>giá</th>
+    <th>hình ảnh</th>
+  </tr>
+  <tr *ngFor="let baiViet of baiViets">
+    <td>{{baiViet.danhMuc}}</td>
+    <td>{{baiViet.vungMien}}</td>
+    <td>{{baiViet.banLa}}</td>
+    <td>{{baiViet.banDangTin}}</td>
+    <td>{{baiViet.tinhTrang}}</td>
+    <td>{{baiViet.diaChi}}</td>
+    <td>{{baiViet.dienTich}}</td>
+    <td>{{baiViet.huong}}</td>
+    <td>{{baiViet.tuaDe}}</td>
+    <td>{{baiViet.noiDung}}</td>
+    <td>{{baiViet.gia}}</td>
+    <td><img src="{{baiViet.hinhAnh}}" style="width: 80px ; height: 80px"></td>
+  </tr>
+</table>

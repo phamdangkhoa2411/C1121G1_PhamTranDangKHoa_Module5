@@ -1,29 +1,62 @@
 <h1>Tạo danh mục mới</h1>
 <form [formGroup]="productForm" (ngSubmit)="submit()">
-  <table  >
-
+  <table>
     <tr>
       <td>name</td>
       <td><input type="text" formControlName="name"></td>
     </tr>
+    <div *ngIf="productForm.get('name').errors?.required&&(name?.dirty ||name?.touched)" style="color: red">
+      Không được bỏ trống.
+    </div>
+    <div *ngIf="productForm.get('name').errors?.minlength&&(name?.dirty ||name?.touched)" style="color: red">
+      Không được ít hơn  1 ký tự.
+    </div>
+    <div *ngIf="productForm.get('name').errors?.maxlength&&(name?.dirty ||name?.touched)" style="color: red">
+      Không được quá 50 ký tự.
+    </div>
+
     <tr>
       <td>price</td>
       <td><input type="text" formControlName="price"></td>
     </tr>
+    <div *ngIf="productForm.get('price').errors?.required&&(price?.dirty ||price?.touched)" style="color: red">
+      Không được bỏ trống.
+    </div>
+    <div *ngIf="productForm.get('price').errors?.min&&(price?.dirty ||price?.touched)" style="color: red">
+      Không được ít hơn 50 usd.
+    </div>
 
     <tr>
       <td>status</td>
-     <td> <input type="text" formControlName="status">
-     </td>
+      <td><input type="text" formControlName="status">
+      </td>
     </tr>
+    <div *ngIf="productForm.get('status').errors?.required&&(status?.dirty ||status?.touched)" style="color: red">
+      Không được bỏ trống.
+    </div>
 
-    <select formControlName="category">
-      <option *ngFor="let cate of categories" [ngValue]="cate">{{cate.name}}</option>
-    </select>
     <tr>
-      <td></td>
+      <td>date</td>
+      <td><input type="date" formControlName="date">
+      </td>
+    </tr>
+    <div *ngIf="productForm.get('date').errors?.required&&(date?.dirty ||date?.touched)" style="color: red">
+      Không được bỏ trống.
+    </div>
+    <tr>
+      <td>category</td>
+      <select formControlName="category">
+        <option *ngFor="let cate of categories" [ngValue]="cate">{{cate.name}}</option>
+      </select>
+    </tr>
+    <tr>
+      <div *ngIf="productForm.get('category').errors?.required&&(category?.dirty ||category?.touched)"
+           style="color: red">
+        Không được bỏ trống.
+      </div>
+    <tr>
       <td>
-        <button>Tạo mới</button>
+        <button type="submit" [disabled]="!productForm.valid">Tạo mới</button>
       </td>
     </tr>
   </table>
