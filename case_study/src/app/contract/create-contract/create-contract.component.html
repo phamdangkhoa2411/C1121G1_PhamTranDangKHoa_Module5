@@ -1,0 +1,101 @@
+<header>
+
+  <!-- Background image -->
+  <div
+    class="p-5 text-center bg-image"
+    style="
+      background-image: url('https://freetuts.net/upload/tut_post/images/2021/06/29/4045/anh-wallpaperup-full-hp-4k-chat-luong-cao.jpg');
+      height: 300px;
+      margin-top: 0;
+    "
+  >
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <h1 class="mb-3">Contract</h1>
+          <h4 class="mb-3">Create Contract</h4>
+          <a class="btn btn-outline-light btn-lg" href="#!" role="button"
+          >Call to action</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Background image -->
+</header>
+
+
+<div class="container" style="margin-top: 50px">
+  <div style="margin-bottom: 15px">
+    <button type="button" class="btn btn-outline-success"><a [routerLink]="['/contract/list']">Back Contract List</a></button>
+  </div>
+
+  <form [formGroup]="createContractForm" (ngSubmit)="submitCreateContract()" novalidate="novalidate" class="col-8 mx-auto">
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="code">Contract code</label>
+        <input type="text" formControlName="contractCode" name="contractCode" class="form-control" id="code">
+        <small style="color: red" *ngIf="(createContractForm.controls.contractCode.hasError('required')&& (createContractForm.controls.contractCode.dirty || createContractForm.controls.contractCode.touched))">Mã hợp đồng không được để trống !</small>
+        <small style="color: red" *ngIf="(createContractForm.controls.contractCode.hasError('pattern')&& (createContractForm.controls.contractCode.dirty || createContractForm.controls.contractCode.touched))">Mã hợp đồng phải đúng định dạng HD-XXXX !</small>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="service">Service</label>
+        <select class="form-control" name="service" formControlName="service" id="service">
+          <option *ngFor="let service of services"
+                  [ngValue]="service.serviceId">{{service.serviceName}}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Contract start date</label>
+        <input type="date" formControlName="startDate" name="startDate" class="form-control" id="inputEmail4">
+        <small style="color: red" *ngIf="(createContractForm.controls.startDate.hasError('required')&& (createContractForm.controls.startDate.dirty || createContractForm.controls.startDate.touched))">Ngày bắt đầu hợp đồng không được để trống !</small>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Contract end date</label>
+        <input type="date" formControlName="endDate" name="endDate" class="form-control" id="inputPassword4">
+        <small style="color: red" *ngIf="(createContractForm.controls.endDate.hasError('required')&& (createContractForm.controls.endDate.dirty || createContractForm.controls.endDate.touched))">Ngày kết thúc hợp đồng không được để trống !</small>
+
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="employee">Employee name</label>
+        <input type="text" class="form-control" id="employee">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="cus">Customer name</label>
+        <select class="form-control" name="customer" formControlName="customer" id="cus">
+          <option *ngFor="let customer of customers"
+                  [ngValue]="customer.id">{{customer.customerName}}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+
+      <div class="form-group col-md-6">
+        <label for="inputEmail7">Contract deposit</label>
+        <input type="text" formControlName="contractDeposit" name="contractDeposit" class="form-control" id="inputEmail7">
+        <small style="color: red" *ngIf="(createContractForm.controls.contractDeposit.hasError('required')&& (createContractForm.controls.contractDeposit.dirty || createContractForm.controls.contractDeposit.touched))">Tiền đặt cọc không được để trống !</small>
+        <small style="color: red" *ngIf="(createContractForm.controls.contractDeposit.hasError('min')&& (createContractForm.controls.contractDeposit.dirty || createContractForm.controls.contractDeposit.touched))">Tiền đặt cọc không được là số âm !</small>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Contract total money</label>
+        <input type="text" formControlName="totalMoney" name="totalMoney" class="form-control" id="inputPassword5">
+        <small style="color: red" *ngIf="(createContractForm.controls.totalMoney.hasError('required')&& (createContractForm.controls.totalMoney.dirty || createContractForm.controls.totalMoney.touched))">Tổng tiền không được để trống !</small>
+        <small style="color: red" *ngIf="(createContractForm.controls.totalMoney.hasError('min')&& (createContractForm.controls.totalMoney.dirty || createContractForm.controls.totalMoney.touched))">Tổng tiền không được là số âm !</small>
+      </div>
+    </div>
+
+
+    <div style="text-align: center; margin-bottom: 10px">
+      <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
+    </div>
+  </form>
+</div>
+

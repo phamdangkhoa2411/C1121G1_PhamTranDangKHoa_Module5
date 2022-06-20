@@ -1,0 +1,134 @@
+<header>
+
+  <!-- Background image -->
+  <div
+    class="p-5 text-center bg-image"
+    style="
+      background-image: url('https://freetuts.net/upload/tut_post/images/2021/06/29/4045/anh-wallpaperup-full-hp-4k-chat-luong-cao.jpg');
+      height: 300px;
+      margin-top: 0;
+    "
+  >
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <h1 class="mb-3">Customer</h1>
+          <h4 class="mb-3">List Customer</h4>
+          <a class="btn btn-outline-light btn-lg" href="#!" role="button"
+          >Call to action</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Background image -->
+</header>
+
+
+<div id="main-container">
+  <div class="container" style="margin-top: 50px">
+
+    <div style="display: flex; justify-content: space-between">
+      <div>
+        <button type="button" class="btn btn-outline-success"><a [routerLink]="['/customer/create']">Create</a></button>
+      </div>
+
+      <div>
+<!--        <nav class="navbar">-->
+<!--          <input type="text" class="form-control" name="name" [(ngModel)]="name" (ngModelChange)="search()"-->
+<!--                 placeholder="Enter name to search">-->
+<!--        </nav>-->
+      </div>
+    </div>
+
+
+
+    <table class="table">
+      <thead class="thead-dark">
+      <tr>
+        <th>NO</th>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Birthday</th>
+        <th>Gender</th>
+        <th>Id Card</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Type</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let customer of customers; index as i">
+        <td>{{i + 1}}</td>
+        <td>{{customer.customerCode}}</td>
+        <td>{{customer.customerName}}</td>
+        <td>{{customer.customerAddress}}</td>
+        <td>{{customer.customerBirthday}}</td>
+        <td>
+          <p *ngIf="customer.customerGender==0">Female</p>
+          <p *ngIf="customer.customerGender==1">Male</p>
+        </td>
+        <td>{{customer.customerIdCard}}</td>
+        <td>{{customer.customerPhone}}</td>
+        <td>{{customer.customerEmail}}</td>
+        <td>
+          <p *ngIf="customer.customerType==1">Diamond</p>
+          <p *ngIf="customer.customerType==2">Platinium</p>
+          <p *ngIf="customer.customerType==3">Gold</p>
+          <p *ngIf="customer.customerType==4">Silver</p>
+          <p *ngIf="customer.customerType==5">Member</p>
+        </td>
+
+        <td><a [routerLink]="['/customer/edit', customer.customerId]">edit</a></td>
+<!--        <td><a (click)="onOpenEditModal(customer)" style="color: darkviolet">delete</a></td>-->
+      </tr>
+
+      </tbody>
+    </table>
+
+<!--    <pagination-controls (pageChange)="page = $event"></pagination-controls>-->
+  </div>
+</div>
+
+
+<!--modal delete-->
+<!--<div-->
+<!--  class="modal fade"-->
+<!--  id="deleteModal"-->
+<!--  data-backdrop="static"-->
+<!--  data-keyboard="false"-->
+<!--  tabindex="-1"-->
+<!--  aria-labelledby="staticBackdropLabel"-->
+<!--  aria-hidden="true">-->
+<!--  <div class="modal-dialog">-->
+<!--    <div class="modal-content">-->
+<!--      <div class="modal-header">-->
+<!--        <h5 class="modal-title" id="staticBackdropLabel">xóa khách hàng </h5>-->
+<!--        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>-->
+<!--        &lt;!&ndash;                <input type="hidden" id="customerDelete_id" name="customer_id">&ndash;&gt;-->
+<!--      </div>-->
+<!--      <div class="modal-body" id="customer_delete">-->
+<!--        <div class="modal-body">-->
+<!--          <div *ngIf="check">-->
+<!--            <p>bạn có muốn xóa khách hàng : {{deleteCustomer.customerName}}</p>-->
+<!--            <p>khách hàng có mã là : {{deleteCustomer.customerCode}}</p>-->
+<!--          </div>-->
+
+<!--          <div class="modal-footer">-->
+<!--            &lt;!&ndash;            <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>&ndash;&gt;-->
+<!--            &lt;!&ndash;            <button (click)="onDeleteEmployee(deleteEmployee?.id)" class="btn btn-danger" data-dismiss="modal">Yes&ndash;&gt;-->
+<!--            &lt;!&ndash;            </button>&ndash;&gt;-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="modal-footer">-->
+<!--        <button #closeModal type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+<!--        <button (click)="delete(closeModal)" type="button" class="btn btn-primary" id="delete_customer_id">ok</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+

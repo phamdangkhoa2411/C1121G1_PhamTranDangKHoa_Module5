@@ -1,0 +1,65 @@
+<header>
+
+  <!-- Background image -->
+  <div
+    class="p-5 text-center bg-image"
+    style="
+      background-image: url('https://freetuts.net/upload/tut_post/images/2021/06/29/4045/anh-wallpaperup-full-hp-4k-chat-luong-cao.jpg');
+      height: 300px;
+      margin-top: 0;
+    "
+  >
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <h1 class="mb-3">Contract</h1>
+          <h4 class="mb-3">List Contract</h4>
+          <a class="btn btn-outline-light btn-lg" href="#!" role="button"
+          >Call to action</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Background image -->
+</header>
+
+
+
+<div class="container" style="margin-top: 50px">
+
+  <div>
+    <button type="button" class="btn btn-outline-success"><a [routerLink]="['/contract/create']">Create</a></button>
+  </div>
+
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th>NO</th>
+      <th>Code</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Deposit</th>
+      <th>Total money</th>
+      <th>Employee name</th>
+      <th>Customer name</th>
+      <th>Service</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let contract of contracts">
+      <td>{{contract.contractId}}</td>
+      <td>{{contract.contractCode}}</td>
+      <td>{{contract.startDate}}</td>
+      <td>{{contract.endDate}}</td>
+      <td>{{contract.contractDeposit}}</td>
+      <td>{{contract.totalMoney}}</td>
+      <td>{{contract.employee}}</td>
+      <td>{{contract.customer}}</td>
+      <td>{{contract.service.serviceName}}</td>
+    </tr>
+
+
+    </tbody>
+  </table>
+</div>

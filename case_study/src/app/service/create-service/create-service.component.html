@@ -1,0 +1,125 @@
+<header>
+
+  <!-- Background image -->
+  <div
+    class="p-5 text-center bg-image"
+    style="
+      background-image: url('https://freetuts.net/upload/tut_post/images/2021/06/29/4045/anh-wallpaperup-full-hp-4k-chat-luong-cao.jpg');
+      height: 300px;
+      margin-top: 0;
+    "
+  >
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <h1 class="mb-3">Service</h1>
+          <h4 class="mb-3">Create Service</h4>
+          <a class="btn btn-outline-light btn-lg" href="#!" role="button"
+          >Call to action</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Background image -->
+</header>
+
+
+
+
+<div class="container" style="margin-top: 50px">
+  <form [formGroup]="createServiceForm" (ngSubmit)="submitCreateService()">
+
+    <div class="form-group">
+      <label for="name">Service name</label>
+      <input type="text" formControlName="serviceName" name="serviceName" class="form-control" id="name">
+      <small style="color: red" *ngIf="(createServiceForm.controls.serviceName.hasError('required')&&
+       (createServiceForm.controls.serviceName.dirty||createServiceForm.controls.serviceName.touched))">
+        Tên dịch vụ không được để trống !</small>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Service code</label>
+        <input type="text" formControlName="serviceCode" name="serviceCode" class="form-control" id="inputEmail4">
+        <small style="color: red" *ngIf="(createServiceForm.controls.serviceCode.hasError('required')&& (createServiceForm.controls.serviceCode.dirty||createServiceForm.controls.serviceCode.touched))">Mã dịch vụ không được để trống !</small>
+        <small style="color: red" *ngIf="(createServiceForm.controls.serviceCode.hasError('pattern')&& (createServiceForm.controls.serviceCode.dirty||createServiceForm.controls.serviceCode.touched))">Mã dịch vụ phải đúng định dạng DV-XXXX !</small>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Service area</label>
+        <input type="text" formControlName="serviceArea" name="serviceArea" class="form-control" id="inputPassword4">
+        <small style="color: red" *ngIf="(createServiceForm.controls.serviceArea.hasError('required')&& (createServiceForm.controls.serviceArea.dirty||createServiceForm.controls.serviceArea.touched))">Diện tích dịch vụ không được để trống !</small>
+        <small style="color: red" *ngIf="(createServiceForm.controls.serviceArea.hasError('min')&& (createServiceForm.controls.serviceArea.dirty||createServiceForm.controls.serviceArea.touched))">Diện tích dịch vụ phải là số dương !</small>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail7">Service cost</label>
+        <input type="text" formControlName="serviceCost" name="serviceCost" class="form-control" id="inputEmail7">
+        <small style="color: red" *ngIf="(createServiceForm.controls.serviceCost.hasError('required')&& (createServiceForm.controls.serviceCost.dirty||createServiceForm.controls.serviceCost.touched))">Giá dịch vụ không được để trống !</small>
+        <small style="color: red" *ngIf="(createServiceForm.controls.serviceCost.hasError('min')&& (createServiceForm.controls.serviceCost.dirty||createServiceForm.controls.serviceCost.touched))">Giá dịch vụ phải là số dương !</small>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Service max people</label>
+        <input type="text" formControlName="serviceMaxPeople" name="serviceMaxPeople" class="form-control" id="inputPassword5">
+        <small style="color: red" *ngIf="(createServiceForm.controls.serviceMaxPeople.hasError('required')&& (createServiceForm.controls.serviceMaxPeople.dirty||createServiceForm.controls.serviceMaxPeople.touched))">Số người tối đa không được để trống !</small>
+        <small style="color: red" *ngIf="(createServiceForm.controls.serviceMaxPeople.hasError('min')&& (createServiceForm.controls.serviceMaxPeople.dirty||createServiceForm.controls.serviceMaxPeople.touched))">Số người tối đa phải là số dương !</small>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="type">Room Standard</label>
+        <select id="type" formControlName="roomStandard" name="roomStandard" class="form-control">
+          <option *ngFor="let r of standardList" [ngValue]="r.id">
+            {{r.name}}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="des">Description other convenience</label>
+        <input type="text" formControlName="descriptionOtherConvenience" name="descriptionOtherConvenience" class="form-control" id="des">
+        <small style="color: red" *ngIf="(createServiceForm.controls.descriptionOtherConvenience.hasError('required')&& (createServiceForm.controls.descriptionOtherConvenience.dirty||createServiceForm.controls.descriptionOtherConvenience.touched))">Tiện nghi không được để trống !</small>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="pool">Pool area</label>
+        <input type="text" formControlName="poolArea" name="poolArea" class="form-control" id="pool">
+        <small style="color: red" *ngIf="(createServiceForm.controls.poolArea.hasError('min')&& (createServiceForm.controls.poolArea.dirty||createServiceForm.controls.poolArea.touched))">Diện tích hồ bơi phải là số dương !</small>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="floor">Number of floors</label>
+        <input type="text" formControlName="numberOfFloors" name="numberOfFloors" class="form-control" id="floor">
+        <small style="color: red" *ngIf="(createServiceForm.controls.numberOfFloors.hasError('min')&& (createServiceForm.controls.numberOfFloors.dirty||createServiceForm.controls.numberOfFloors.touched))">Số tầng phải là số dương !</small>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputStat">Service type</label>
+        <select id="inputStat" formControlName="serviceType" name="serviceType" class="form-control">
+          <option selected value="1">Villa</option>
+          <option value="2">House</option>
+          <option value="3">Room</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="rent">Rent type</label>
+        <select id="rent" formControlName="rentType" name="rentType" class="form-control">
+          <option *ngFor="let r of rentTypeList" [ngValue]="r.id">
+            {{r.name}}
+          </option>
+        </select>
+      </div>
+    </div>
+
+
+    <div style="text-align: center; margin-bottom: 10px">
+      <button  type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
+    </div>
+  </form>
+</div>

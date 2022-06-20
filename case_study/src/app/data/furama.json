@@ -1,0 +1,28 @@
+{
+  "customer": [{
+    "id": 1,
+    "customerCode": "KH-001",
+    "customerName": "Nguyễn Thị Hào",
+    "customerBirthday": "07/11/1970",
+    "customerGender": 0,
+    "customerIdCard": "643431213",
+    "customerPhone": "0905423362",
+    "customerEmail": "thihao07@gmail.com",
+    "customerAddress": "Đà Nẵng",
+    "customerType": 5
+  },
+    {
+      "id": 2,
+      "customerCode": "KH-002",
+      "customerName": "Phạm Xuân Diệu",
+      "customerBirthday": "08/08/1992",
+      "customerGender": 1,
+      "customerIdCard": "865342123",
+      "customerPhone": "0904333333",
+      "customerEmail": "xuandieu92@gmail.com",
+      "customerAddress": "Quảng Trị",
+      "customerType": 3
+    }
+  ]
+
+}
